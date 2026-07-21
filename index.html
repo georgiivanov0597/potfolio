@@ -1,59 +1,129 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Georgi Ivanov — portfolio" />
-    <title>Georgi Ivanov | Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="logo" href="#top">IvanovG</a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Georgi Ivanov — Low-Code Developer | Mendix. Sofia, Bulgaria.">
+  <title>Georgi Ivanov — Low-Code Developer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner container">
+      <a href="#top" class="nav-name">Georgi Ivanov</a>
+      <ul class="nav-links">
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <main id="top">
-      <section class="hero" aria-label="Hero">
-        <p class="eyebrow">Portfolio</p>
-        <h1>Building clean products<br />and playful interfaces.</h1>
-        <p class="lede">
-          Hi, I'm Georgi. This site is under active development — content and
-          design will grow from here.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#work">View work</a>
-          <a class="btn ghost" href="#contact">Get in touch</a>
+  <div id="top"></div>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-name">Georgi Ivanov</h1>
+        <div class="hero-role">Low-Code Developer | Mendix</div>
+        <div class="hero-meta">
+          <span>Sofia, Bulgaria</span>
+          <span>•</span>
+          <a href="mailto:georgi.ivanov0597@gmail.com">georgi.ivanov0597@gmail.com</a>
         </div>
-      </section>
+      </div>
+    </div>
+  </header>
 
-      <section id="work" class="section">
-        <h2>Selected work</h2>
-        <p class="muted">Projects will land here next.</p>
-      </section>
+  <!-- About -->
+  <section class="section container" id="about">
+    <div class="section-title">Focus</div>
+    <div class="about-text">
+      I build and maintain business-critical applications using <span class="highlight">Mendix</span>.
+      My work focuses on delivering high-ROI solutions that directly support core operations for large-scale retail.
+    </div>
+  </section>
 
-      <section id="about" class="section">
-        <h2>About</h2>
-        <p class="muted">Bio and focus areas coming soon.</p>
-      </section>
+  <!-- Experience -->
+  <section class="section container" id="experience">
+    <div class="section-title">Experience</div>
+    <h2>Current Role</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">Low-Code Developer</div>
+        <div class="card-subtitle">Lidl Bulgaria — Largest retailer in the country</div>
+        <div class="card-body">
+          Designing, developing, and maintaining enterprise-grade low-code solutions that support critical parts of the business.
+          Focus on reliable, scalable applications that deliver measurable operational value.
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p class="muted">
-          Reach me via GitHub:
-          <a href="https://github.com/georgiivanov0597">@georgiivanov0597</a>
-        </p>
-      </section>
-    </main>
+  <!-- Education & Certifications -->
+  <section class="section container" id="education">
+    <div class="section-title">Background</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">Computer Science</div>
+        <div class="card-subtitle">New Bulgarian University</div>
+        <div class="card-body">
+          Strong technical foundation in software development, systems, and problem-solving.
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Mendix Intermediate Developer</div>
+        <div class="card-subtitle">Official Certification</div>
+        <div class="card-body">
+          Validated proficiency in the Mendix low-code platform for building and deploying production applications.
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer class="site-footer">
-      <span>© <span id="year"></span> Georgi Ivanov</span>
-    </footer>
+  <!-- Languages -->
+  <section class="section container">
+    <div class="section-title">Languages</div>
+    <div class="languages">
+      <div class="lang">
+        English <span class="level">— Professional working proficiency</span>
+      </div>
+      <div class="lang">
+        German <span class="level">— Currently learning</span>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- Impact -->
+  <section class="section container" id="impact">
+    <div class="section-title">Impact</div>
+    <div class="impact">
+      All current and completed projects are critical components of business operations.
+      They consistently deliver <span class="highlight">very high return on investment</span> and address real operational needs at scale.
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section container" id="contact">
+    <div class="section-title">Get in touch</div>
+    <div class="contact">
+      Open to interesting low-code and Mendix opportunities.
+      <br><br>
+      <a href="mailto:georgi.ivanov0597@gmail.com" aria-label="Email Georgi" title="georgi.ivanov0597@gmail.com">
+        <svg class="mail-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+          <path d="M22 7l-10 6.5L2 7"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer container">
+    <div>© Georgi Ivanov — Sofia, Bulgaria</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
