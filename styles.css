@@ -546,6 +546,10 @@ body {
     flex-wrap: nowrap;
   }
 
+  .hero-meta .meta-sep {
+    display: none;
+  }
+
   .hero-social svg {
     width: 20px;
     height: 20px;
@@ -635,6 +639,10 @@ body {
     font-size: 0.85rem;
     justify-content: space-between;
     flex-wrap: nowrap;
+  }
+
+  .hero-meta .meta-sep {
+    display: none;
   }
 
   .hero-social {
