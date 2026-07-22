@@ -21,7 +21,7 @@ window.addEventListener('scroll', () => {
 // =============================================
 // Low-Code Technology Hero Animation
 // Subtle, looping network of connected nodes
-// representing visual modeling, flows, components
+// Blue Mendix-inspired theme
 // Fully responsive + respects prefers-reduced-motion
 // =============================================
 (function initHeroAnimation() {
@@ -104,8 +104,8 @@ window.addEventListener('scroll', () => {
   function draw() {
     ctx.clearRect(0, 0, width, height);
 
-    // Subtle tech grid
-    ctx.strokeStyle = 'rgba(97, 93, 85, 0.045)';
+    // Subtle tech grid (cool blue-gray)
+    ctx.strokeStyle = 'rgba(100, 116, 139, 0.06)';
     ctx.lineWidth = 1;
     const grid = 52;
     for (let x = grid; x < width; x += grid) {
@@ -121,7 +121,7 @@ window.addEventListener('scroll', () => {
       ctx.stroke();
     }
 
-    // Connections
+    // Connections (Mendix blue accents)
     ctx.lineWidth = 1.15;
     for (let i = 0; i < nodes.length; i++) {
       const a = nodes[i];
@@ -132,10 +132,11 @@ window.addEventListener('scroll', () => {
         if (dist < MAX_DIST && dist > 4) {
           const alpha = Math.pow(1 - dist / MAX_DIST, 1.15) * 0.22;
 
-          let r = 97, g = 93, b = 85;
+          // muted slate or blue accent
+          let r = 100, g = 116, b = 139;
           const pulse = Math.sin(time * 0.9 + i * 1.7 + j) > 0.65;
           if (pulse || a.type === 'accent' || b.type === 'accent') {
-            r = 217; g = 119; b = 87;
+            r = 20; g = 111; b = 244; // Mendix blue
           }
 
           ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${alpha})`;
@@ -151,7 +152,7 @@ window.addEventListener('scroll', () => {
             const py = a.y + (b.y - a.y) * t;
 
             const flowAlpha = alpha * 1.35;
-            ctx.fillStyle = `rgba(217, 119, 87, ${flowAlpha})`;
+            ctx.fillStyle = `rgba(20, 111, 244, ${flowAlpha})`;
             ctx.beginPath();
             ctx.arc(px, py, 1.65, 0, Math.PI * 2);
             ctx.fill();
@@ -159,7 +160,7 @@ window.addEventListener('scroll', () => {
             const t2 = (t - 0.12 + 1) % 1;
             const px2 = a.x + (b.x - a.x) * t2;
             const py2 = a.y + (b.y - a.y) * t2;
-            ctx.fillStyle = `rgba(217, 119, 87, ${flowAlpha * 0.55})`;
+            ctx.fillStyle = `rgba(20, 111, 244, ${flowAlpha * 0.55})`;
             ctx.beginPath();
             ctx.arc(px2, py2, 1.1, 0, Math.PI * 2);
             ctx.fill();
@@ -173,12 +174,12 @@ window.addEventListener('scroll', () => {
       const pulse = 1 + Math.sin(time * 1.35 + node.phase) * 0.18;
       const r = node.radius * pulse;
 
-      ctx.fillStyle = 'rgba(37, 35, 31, 0.09)';
+      ctx.fillStyle = 'rgba(30, 41, 59, 0.09)';
       ctx.beginPath();
       ctx.arc(node.x, node.y, r * 0.95, 0, Math.PI * 2);
       ctx.fill();
 
-      ctx.strokeStyle = 'rgba(97, 93, 85, 0.32)';
+      ctx.strokeStyle = 'rgba(100, 116, 139, 0.32)';
       ctx.lineWidth = 1.4;
       ctx.beginPath();
       ctx.arc(node.x, node.y, r, 0, Math.PI * 2);
@@ -187,7 +188,7 @@ window.addEventListener('scroll', () => {
       const highlight = Math.sin(time * 0.75 + node.phase * 1.3) > 0.78 || node.type === 'accent';
       if (highlight) {
         const ringSize = r + 4.5 + Math.sin(time * 1.1 + node.phase) * 1.5;
-        ctx.strokeStyle = 'rgba(217, 119, 87, 0.38)';
+        ctx.strokeStyle = 'rgba(20, 111, 244, 0.38)';
         ctx.lineWidth = 1.9;
         ctx.beginPath();
         ctx.arc(node.x, node.y, ringSize, 0, Math.PI * 2);
@@ -195,7 +196,7 @@ window.addEventListener('scroll', () => {
       }
 
       if (node.type === 'accent' || Math.random() < 0.3) {
-        ctx.fillStyle = 'rgba(217, 119, 87, 0.25)';
+        ctx.fillStyle = 'rgba(20, 111, 244, 0.25)';
         ctx.beginPath();
         ctx.arc(node.x, node.y, Math.max(0.8, r * 0.28), 0, Math.PI * 2);
         ctx.fill();
@@ -251,4 +252,46 @@ window.addEventListener('scroll', () => {
   } else {
     window.addEventListener('load', start);
   }
+})();
+
+// Certificate modal logic
+(function initCertModal() {
+  const certCard = document.querySelector('.cert-card');
+  const modal = document.getElementById('cert-modal');
+  if (!certCard || !modal) return;
+
+  const closeBtn = modal.querySelector('.modal-close');
+
+  function openModal() {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  certCard.addEventListener('click', openModal);
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopImmediatePropagation();
+      closeModal();
+    });
+  }
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
 })();
